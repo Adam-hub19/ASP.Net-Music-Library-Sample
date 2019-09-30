@@ -1,0 +1,128 @@
+﻿
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] -Music Library</title>
+
+    <!-- External CSS libraries -->
+    <link type="text/css" rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="~/assets/css/magnific-popup.css">
+    <link type="text/css" rel="stylesheet" href="~/assets/css/jquery.selectBox.css">
+    <link type="text/css" rel="stylesheet" href="~/assets/css/dropzone.css">
+    <link type="text/css" rel="stylesheet" href="~/assets/css/rangeslider.css">
+    <link type="text/css" rel="stylesheet" href="~/assets/css/animate.min.css">
+    <link type="text/css" rel="stylesheet" href="~/assets/css/leaflet.css">
+    <link type="text/css" rel="stylesheet" href="~/assets/css/slick.css">
+    <link type="text/css" rel="stylesheet" href="~/assets/css/slick-theme.css">
+    <link type="text/css" rel="stylesheet" href="~/assets/css/slick-theme.css">
+    <link type="text/css" rel="stylesheet" href="/~assets/css/map.css">
+    <link type="text/css" rel="stylesheet" href="~/assets/css/jquery.mCustomScrollbar.css">
+    <link type="text/css" rel="stylesheet" href="~/assets/fonts/font-awesome/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="~/assets/fonts/flaticon/font/flaticon.css" />
+
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" href="~/assets/img/favicon.ico" type="image/x-icon">
+
+    <!-- Google fonts -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800%7CPoppins:400,500,700,800,900%7CRoboto:100,300,400,400i,500,700">
+
+    <!-- Custom Stylesheet -->
+    <link type="text/css" rel="stylesheet" href="~/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" id="style_sheet" href="~/assets/css/skins/default.css">
+    <script src='assets/js/jquery-3.2.1.slim.min.js'></script>
+
+   
+
+
+    <!--
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
+          asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+          asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
+          crossorigin="anonymous"
+          integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" />
+
+
+    -->
+
+
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
+              crossorigin="anonymous"
+              integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" />
+    </environment>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Music Library</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark active" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Artists" asp-action="Index">Artists</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Albums" asp-action="Index">Albums</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Genres" asp-action="Index">Genres</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About">About</a>
+                        </li>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="RoleIndex">Roles</a>
+                            </li>
+                        }
+
+                        <li class="nav-item">
+                            <partial name="_LoginPartial" />
+                        </li>
+                        
+
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <!--
+        <partial name="_CookieConsentPartial" />
+    -->
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2019 - Adam's Music Library - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <environment include="Development">
+        <script src='~/assets/js/popper.min.js'></script>
+        <script src='~/assets/js/bootstrap.min.js'></script>
+    </environment>
+   
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,33 @@
+﻿@addTagHelper "*, Microsoft.AspNetCore.Mvc.TagHelpers"
+
+<fieldset class="account">
+
+    <h1>Assign role</h1>
+
+    <br />
+
+    <form role="form" asp-action="AssignRole">
+        <div asp-validation-summary="All" class="input-validation-error"></div>
+
+        <div class="form-group">
+            <label> Select User</label>
+            @Html.DropDownList("UserName")
+
+           
+
+        </div>
+
+
+        <div class="form-group">
+            <label> Select User role</label>
+            @Html.DropDownList("Name")
+
+        </div>
+
+        <div>
+            <label>&nbsp;</label>
+            <button type="submit" class="btn btn-primary">Assign role</button>
+        </div>
+
+    </form>
+</fieldset>

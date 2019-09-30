@@ -1,0 +1,32 @@
+﻿@model IEnumerable<MusicLibrary.Models.Account.RoleViewModel>
+
+@{
+    ViewData["Title"] = "Role Index";
+}
+
+<h2>Roles</h2>
+
+<p>
+    <a asp-action="RegisterRole" asp-controller="Account" class="btn btn-primary" role="button">Create a new role</a>
+    <a asp-action="AssignRole" asp-controller="Account" class="btn btn-primary" role="button">Assign a role</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+           
+        </tr>
+}
+    </tbody>
+</table>

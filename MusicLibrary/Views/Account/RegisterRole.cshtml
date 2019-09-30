@@ -1,0 +1,27 @@
+﻿@addTagHelper "*, Microsoft.AspNetCore.Mvc.TagHelpers"
+@model MusicLibrary.Models.Account.RoleViewModel
+
+
+<fieldset class="account">
+
+    <h1>New role</h1>
+
+    <br />
+
+    <form role="form" asp-action="RegisterRole">
+        <div asp-validation-summary="All" class="input-validation-error"></div>
+
+        <div class="form-group">
+            <label asp-for="Name"></label>
+            <input type="text" asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="field-validation-error"></span>
+        </div>
+
+
+        <div>
+            <label>&nbsp;</label>
+            <button type="submit" class="btn btn-primary">Add new role</button>
+        </div>
+
+    </form>
+</fieldset>
